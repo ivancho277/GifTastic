@@ -11,13 +11,10 @@ var animal = "";
 var buttonArray = [];
 $("#button-addon1").on("click", ()=> {
     var newbutton = $("<button>")
-    newbutton.attr("id", "animal-btn")
+    newbutton.attr("class", "animal-btn")
     animal = $("#gif-search").val();
     newbutton.text(animal);
-
-    
     buttonArray.push(newbutton);
-    
     console.log(buttonArray);
     console.log(newbutton);
 
@@ -29,7 +26,11 @@ $("#button-addon1").on("click", ()=> {
 
 
 })
-
+var clickedButton;
+$(".animal-btn").on("click", (e)=> {
+    var clickedButton = e.target.outerText
+    console.log(clickedButton)
+})
 var queryURL = "http://api.giphy.com/v1/gifs/search?q="+ animal +"&api_key=Ohxt7aSzLjq13m7TKezI44mLur3VAS1z&limit=5"
 
 
