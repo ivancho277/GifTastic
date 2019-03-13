@@ -23,15 +23,14 @@ $("#button-addon1").on("click", ()=> {
         $("#button-added").append(buttonArray[i]);
     }
     
-
-
 })
 var clickedButton;
-$(".animal-btn").on("click", (e)=> {
-    var clickedButton = e.target.outerText
+$("#button-added").on("click", ".animal-btn", function(e) {
+    var clickedButton = e.target.innerText
+    console.log($(this))
     console.log(clickedButton)
 })
-var queryURL = "http://api.giphy.com/v1/gifs/search?q="+ animal +"&api_key=Ohxt7aSzLjq13m7TKezI44mLur3VAS1z&limit=5"
+var queryURL = "http://api.giphy.com/v1/gifs/search?q="+ clickedButton +"&api_key=Ohxt7aSzLjq13m7TKezI44mLur3VAS1z&limit=5"
 
 
 $.ajax({
