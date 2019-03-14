@@ -26,13 +26,14 @@ $ ('#button-added').on ('click', '.animal-btn', function (e) {
   console.log (clickedButton);
 
   var queryURL =
-    'http://api.giphy.com/v1/gifs/search?q=' +
+    'https://api.giphy.com/v1/gifs/search?q=' +
     clickedButton +
     '&api_key=Ohxt7aSzLjq13m7TKezI44mLur3VAS1z&limit=5';
 
   $.ajax ({
     url: queryURL,
     method: 'GET',
+   
   }).then (function (response) {
     console.log (response);
 
