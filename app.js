@@ -38,7 +38,7 @@ $ ('#button-added').on ('click', '.animal-btn', function (e) {
     console.log (response);
 
     for (var i = 0; i < response.data.length; i++) {
-      var imgURL = response.data[i].embed_url;
+      var imgURL = response.data[i].images.fixed_width.url
       var animalImage = $ ('<img>');
 
       animalImage.attr ('src', imgURL);
